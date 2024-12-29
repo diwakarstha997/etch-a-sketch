@@ -10,14 +10,14 @@ newGridInputBtn.style.margin = "2%";
 container.appendChild(newGridInputBtn);
 gridContainer.classList.add("grid-container");
 gridContainer.classList.add("flex-container");
-
+container.appendChild(gridContainer);
 
 let numberOfGrid = 16;
 
 newGridInputBtn.addEventListener('click',() => {
-    let userInput = prompt("Give new number of grid greater than 1:");
+    let userInput = prompt("Give new number of grid greater than 1 less than or equal to 100:");
     let userInputInNumber = Number(userInput);
-    if(Number.isInteger(userInputInNumber) && userInputInNumber > 1){
+    if(Number.isInteger(userInputInNumber) && userInputInNumber > 1 && userInputInNumber <= 100){
         numberOfGrid = userInputInNumber;
         removeGrid();
         render();
@@ -50,7 +50,6 @@ const render = () => {
     let totalGrid = Math.pow(numberOfGrid, 2);
 
     gridContainer.style.gap = `${(baseGapSize)/(numberOfGrid -1)}px`;
-    container.appendChild(gridContainer);
 
     for( let i = 1; i <= totalGrid; i++) {
         const gridSquareDiv = document.createElement("div");
