@@ -10,4 +10,4 @@
 
 ## Issue Faced:
  * prompt input was not converted to number type which took too much time just to figure out, as everything was running normal but grid was not rendering normally as grid number was being concadinated as string while performing + operation
- * removing grid, while using for..in selecting the element was not working instead used forEach to traverse and remove all array from the grid container; 
+ * removing grid, while using for..of selecting the element was not working instead used forEach to traverse and remove all array from the grid container; 
