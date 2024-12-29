@@ -32,6 +32,12 @@ function removeGrid() {
     gridDivArray.forEach(item => item.remove());
 }
 
+function getRandomColorValue(){
+    let generatedValue = Math.random() * 256;
+    let roundedValue = Math.floor(generatedValue); // rounds down the generated number
+    return roundedValue;
+}
+
 const render = () => {
     // Initializing current page viewport width for the calculation of grids
     let viewportWidth = self.innerWidth;
@@ -58,7 +64,11 @@ const render = () => {
         gridContainer.appendChild(gridSquareDiv);
 
         gridSquareDiv.addEventListener('mouseenter',() => {
-            gridSquareDiv.style["background-color"] = "green";
+            gridSquareDiv.style["background-color"] = 
+                `rgba(${getRandomColorValue()},
+                ${getRandomColorValue()},
+                ${getRandomColorValue()},
+                ${getRandomColorValue()})`;
         });
     }
 }
